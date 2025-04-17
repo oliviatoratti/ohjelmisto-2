@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS mod1-6</title>
+</head>
+<body>
+<h1>Square root calculator</h1>
+<p id="output"></p>
+<script>
+    "use strict";
+
+    const answer = confirm("Should i calculate the square root?");
+    const output = document.getElementById("output");
+
+    if (answer) {
+      const input = prompt("Give me a number.");
+      const num = parseFloat(input);
+
+      if (!isNaN(num)) {
+        if (num < 0) {
+          output.textContent = "The square root of a negative number is not defined.";
+        } else {
+          const sqrt = Math.sqrt(num)
+          output.textContent = "The square root of " + num + " is " + sqrt.toFixed(2) + ".";
+        }
+      } else {
+        output.textContent = "Invalid input. Try again.";
+      }
+    } else {
+      output.textContent = "The square root is not calculated.";
+    }
+</script>
+</body>
+</html>
